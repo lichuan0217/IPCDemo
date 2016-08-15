@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="top.lemonsoda.ipcdemo.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <Button
+        android:text="Messenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onMessenger"/>
+
+    <Button
+        android:text="AIDL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onAIDL"/>
+
+    <Button
+        android:text="ContentProvider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onContentProvider"/>
+
+    <Button
+        android:text="Socket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSocket"/>
+
+    <Button
+        android:text="Binder Pool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onBinderPool"/>
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="top.lemonsoda.ipcdemo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".messenger.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <activity
+            android:name=".messenger.MessengerActivity"
+            android:label="@string/title_activity_messenger"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".aidl.BookManagerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <activity
+            android:name=".aidl.BookManagerActivity"
+            android:label="@string/title_activity_book_manager"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <provider
+            android:name=".contentprovider.BookProvider"
+            android:authorities="top.lemonsoda.ipcdemo.book.provider"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="top.lemonsoda.ipcdemo.PROVIDER"
+            android:process=":provider" />
+
+        <activity
+            android:name=".contentprovider.ProviderActivity"
+            android:label="@string/title_activity_provider"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".socket.TCPServerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <activity
+            android:name=".socket.TCPClientActivity"
+            android:label="@string/title_activity_tcpclient"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".binderpool.BinderPoolService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <activity
+            android:name=".binderpool.BinderPoolActivity"
+            android:label="@string/title_activity_binder_pool"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>
